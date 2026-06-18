@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <blockquote id="quote">
+            "Time waits for no one. Make every second count."
+            </blockquote>
+        <div class="container">
+            <div class="clock">
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+    <script>
+    let hours = document.getElementById("hours");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+    let ampm = document.getElementById("ampm");
+
+    setInterval(() => {
+        let currentTime = new Date();
+
+        let h = currentTime.getHours();
+        let m = currentTime.getMinutes();
+        let s = currentTime.getSeconds();
+
+        let period = h >= 12 ? "PM" : "AM";
+
+        // 24-hour -> 12-hour conversion
+        h = h % 12;
+        h = h ? h : 12; // 0 ko 12 bana dega
+
+        hours.innerHTML = h;
+        min.innerHTML = m < 10 ? "0" + m : m;
+        sec.innerHTML = s < 10 ? "0" + s : s;
+        ampm.innerHTML = period;
+
+    }, 1000);
+</script>
+</body>
+</html>
