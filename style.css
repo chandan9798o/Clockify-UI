@@ -38,7 +38,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;   /* IMPORTANT for mobile */
-    gap: 10px;
+    gap: 11px;
 
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
